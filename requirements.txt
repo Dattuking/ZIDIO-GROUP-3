@@ -6,3 +6,7 @@ seaborn
 plotly
 openpyxl
 scipy
+statsmodels
+prophet
+torch
+scikit-learn
