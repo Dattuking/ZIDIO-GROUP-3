@@ -68,17 +68,17 @@ if 'Quantity' in df.columns and 'Price' in df.columns:
 
     st.write(df['TotalAmount'].head())
 
-if 'InvoiceDate' in df.columns:
+if 'Invoice Date' in df.columns:
 
-    df['InvoiceDate'] = pd.to_datetime(
-        df['InvoiceDate']
+    df['Invoice Date'] = pd.to_datetime(
+        df['Invoice Date']
     )
 
-    snapshot_date = df['InvoiceDate'].max()
+    snapshot_date = df['Invoice Date'].max()
 
     rfm = df.groupby('Customer ID').agg({
 
-        'InvoiceDate': lambda x:
+        'Invoice Date': lambda x:
             (snapshot_date - x.max()).days,
 
         'Invoice': 'nunique',
@@ -127,7 +127,7 @@ st.plotly_chart(fig)
 st.subheader("Time Series Analysis")
 
 daily_sales = df.groupby(
-    df['InvoiceDate'].dt.date
+    df['Invoice Date'].dt.date
 )['TotalAmount'].sum()
 
 daily_sales.index = pd.to_datetime(
