@@ -63,16 +63,16 @@ rolling_mean = daily_sales.rolling(7).mean()
 
 print(rolling_mean.head())
 
-!pip install great_expectations==0.18.21
-!pip install pydantic==1.10.13
+#!pip install great_expectations==0.18.21
+#!pip install pydantic==1.10.13
 
-!pip uninstall great_expectations -y
-!pip uninstall pydantic -y
+#!pip uninstall great_expectations -y
+#!pip uninstall pydantic -y
 
-!pip cache purge
+#!pip cache purge
 
-!pip install great_expectations==0.18.21
-!pip install pydantic==1.10.13
+#!pip install great_expectations==0.18.21
+#!pip install pydantic==1.10.13
 
 import great_expectations as gx
 
@@ -80,7 +80,7 @@ context = gx.get_context()
 
 print("Validation Ready")
 
-!pip install scikit-learn
+#!pip install scikit-learn
 
 from sklearn.preprocessing import StandardScaler
 
@@ -142,7 +142,7 @@ decomposition = seasonal_decompose(
 
 decomposition.plot()
 
-!pip install prophet
+#!pip install prophet
 
 from prophet import Prophet
 
@@ -162,7 +162,7 @@ forecast = model.predict(future)
 
 model.plot(forecast)
 
-!pip install torch pytorch-lightning
+#!pip install torch pytorch-lightning
 
 import torch
 import torch.nn as nn
